@@ -43,6 +43,17 @@
 
 ---
 
+## 🚀 CI/CD 自动化构建与发布
+
+本项目已配置 GitHub Actions 自动化流程（采用 **版本号 + Build 构建号** 命名规范）：
+
+- **版本规范**：`v{VERSION}+b{BUILD_NUMBER}`，并在构建时自动注入 `Info.plist` 的 `CFBundleShortVersionString` 与 `CFBundleVersion`。
+- **发布方式**：
+  - 推送 Tag（如 `v1.0.0`）时自动编译、打包 `.ipa` 并创建 GitHub Release。
+  - 在 GitHub Actions 页面通过 **Run workflow** 手动输入版本号一键构建发布。
+
+---
+
 ## 📄 开源许可
 
 本项目基于 [MIT 许可证](LICENSE) 开源。特别致谢原项目 [zhihui-hu/one-ip](https://github.com/zhihui-hu/one-ip.git)。
