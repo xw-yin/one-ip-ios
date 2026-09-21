@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		025DD0E4612D3D580F4D2CFF /* DiagnosticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CF6CEB515CD9ED6CAA7316 /* DiagnosticsService.swift */; };
+		100C9A8EB7C11D80C52101C2 /* AIPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E553AD5273DD3692FE93A1 /* AIPlatform.swift */; };
+		110966891C95944D4E8665E5 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86CA7A1202DA8D039990F43 /* Localization.swift */; };
+		149C2929B8DEF2285727D24C /* PingProbe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A338E0101CB5FED26FD6C331 /* PingProbe.swift */; };
+		1867A4517C924393F3F24F4A /* RDAPSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC42396A42837E63A34F33 /* RDAPSection.swift */; };
+		378E016CC156EE7C89D8064A /* DiagnosticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134ED22C53720434098D6771 /* DiagnosticsView.swift */; };
+		3A278A03E2EAA6C00B55CF76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53077EC9413936BB8659A713 /* Assets.xcassets */; };
+		3D42BA48C19C9BFEE3E184FB /* CDNInspectSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB13DF543FD3899BDA9B7CD9 /* CDNInspectSection.swift */; };
+		41ADE2D4C42402E4EFD30FA8 /* IPLookupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5366AC2993206311BF251 /* IPLookupView.swift */; };
+		45E5781B62493F32084881C9 /* DiagnosticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575A95EFE823E7BA5DDFFCE8 /* DiagnosticsViewModel.swift */; };
+		4D449EADACF55B76A13EEA22 /* AIMatrixViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB3C8CD0A7C45964B05EBC7 /* AIMatrixViewModel.swift */; };
+		50E69364A53E422972E2986F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C8B1D863370A06B98BAD7 /* AppSettings.swift */; };
+		51C2278F0773ACCB56388963 /* IPModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409DBD0D66E7D33041748BC6 /* IPModels.swift */; };
+		5FE5D7477E1ED63BF2E477F2 /* RDAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A726894A3A2C27E3263895 /* RDAPService.swift */; };
+		61D5771A7A05E43BFB040023 /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD0178CB1547D60F2C0BCFE /* OverviewViewModel.swift */; };
+		7157E38F0D0653BFF07158D3 /* ExitSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4DE11C11F51F6C22DBB51 /* ExitSplitView.swift */; };
+		7B53EC1A799286A7DE7DC217 /* HealthGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7D9312998CA9BA90C057D /* HealthGaugeView.swift */; };
+		85AC89C8E3012E18C6A22510 /* IPLookupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B066050166A07A4F0C6133D /* IPLookupViewModel.swift */; };
+		88438295C93F2BF867F98B7A /* AIMatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43D8D643CD5B8E48E0AF16 /* AIMatrixView.swift */; };
+		8B8BE96694D92A1E9BF1E669 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB43F3A99294AD56740177B /* OverviewView.swift */; };
+		90D7BDC2B6A9721D6D1C174E /* GlobalPingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8D1B805033EC12B8FDDFDB /* GlobalPingService.swift */; };
+		92CED721DC1C42C5C9984DCD /* TabContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4A657C4714641EC21A5F51 /* TabContainerView.swift */; };
+		9A031DCEE696CE3CC3052CC4 /* MultiSourceGeoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A412AA7E612D150F74F77F /* MultiSourceGeoView.swift */; };
+		B453211F8A3867F9642813BE /* GlobalPingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE301CDDAC5957E28C3F1B /* GlobalPingSection.swift */; };
+		B489694DB05FC0003610FE91 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4362040DB99E54AA09C30 /* HapticManager.swift */; };
+		B5F2F651D568ABA641F896AD /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A8D299137DC98CFF111D1 /* DesignSystem.swift */; };
+		BC056ECFD7DD5DBA02E1CEF5 /* MapCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902954E5A3786D6B5317E59F /* MapCardView.swift */; };
+		C55E565916613DBE172AE83A /* RDAPModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C56C932AB0275282ECAD3 /* RDAPModels.swift */; };
+		D5546E59082B7CF1DBCA3A7C /* CDNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83D4648B491571D08D395E /* CDNProvider.swift */; };
+		D8E8E4D96D2F046D79FD873C /* OneIPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFB47D960338F149B33EA42 /* OneIPApp.swift */; };
+		DA7F16FB9F2A0CE270135EF1 /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89607E26DBF6BA2DC6EF6F60 /* AIService.swift */; };
+		DC81394C9930E50E44414BB5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3103DE11FC3B065CC1F38050 /* SettingsView.swift */; };
+		DDF323F08F86CF9FE11449FE /* DNSLeakSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8033107ADE4A29F6A5B65F /* DNSLeakSection.swift */; };
+		E66A3986272DCA1C22687625 /* IPCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A55B5E70B7E64D5CB5C1CA /* IPCardView.swift */; };
+		F5283311BE5884D5D1642AE4 /* IPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67150A6607D4F17BC0996CE8 /* IPService.swift */; };
+		FCFA99C2BAFC2BCF4F62EF88 /* AICardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5685113E8755FD5D80EE7 /* AICardView.swift */; };
+		FE592C2253D8007E5DE8954F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315C5DE48587FA676C30FDB /* NetworkService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07AC42396A42837E63A34F33 /* RDAPSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDAPSection.swift; sourceTree = "<group>"; };
+		0A8D1B805033EC12B8FDDFDB /* GlobalPingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPingService.swift; sourceTree = "<group>"; };
+		134ED22C53720434098D6771 /* DiagnosticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsView.swift; sourceTree = "<group>"; };
+		16A55B5E70B7E64D5CB5C1CA /* IPCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCardView.swift; sourceTree = "<group>"; };
+		18C4DE11C11F51F6C22DBB51 /* ExitSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitSplitView.swift; sourceTree = "<group>"; };
+		3103DE11FC3B065CC1F38050 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		409DBD0D66E7D33041748BC6 /* IPModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPModels.swift; sourceTree = "<group>"; };
+		42A726894A3A2C27E3263895 /* RDAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDAPService.swift; sourceTree = "<group>"; };
+		4315C5DE48587FA676C30FDB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4FC5366AC2993206311BF251 /* IPLookupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPLookupView.swift; sourceTree = "<group>"; };
+		53077EC9413936BB8659A713 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		575A95EFE823E7BA5DDFFCE8 /* DiagnosticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsViewModel.swift; sourceTree = "<group>"; };
+		579C8B1D863370A06B98BAD7 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		5BC5685113E8755FD5D80EE7 /* AICardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICardView.swift; sourceTree = "<group>"; };
+		5E8033107ADE4A29F6A5B65F /* DNSLeakSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNSLeakSection.swift; sourceTree = "<group>"; };
+		654A8D299137DC98CFF111D1 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		66CF6CEB515CD9ED6CAA7316 /* DiagnosticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsService.swift; sourceTree = "<group>"; };
+		67150A6607D4F17BC0996CE8 /* IPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPService.swift; sourceTree = "<group>"; };
+		70B7D9312998CA9BA90C057D /* HealthGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthGaugeView.swift; sourceTree = "<group>"; };
+		7F1EF9B0A4A710009E7ABA00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		882C56C932AB0275282ECAD3 /* RDAPModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDAPModels.swift; sourceTree = "<group>"; };
+		89607E26DBF6BA2DC6EF6F60 /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
+		8B4A657C4714641EC21A5F51 /* TabContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerView.swift; sourceTree = "<group>"; };
+		902954E5A3786D6B5317E59F /* MapCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCardView.swift; sourceTree = "<group>"; };
+		9B066050166A07A4F0C6133D /* IPLookupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPLookupViewModel.swift; sourceTree = "<group>"; };
+		9B83D4648B491571D08D395E /* CDNProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDNProvider.swift; sourceTree = "<group>"; };
+		9CD0178CB1547D60F2C0BCFE /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
+		9FFB47D960338F149B33EA42 /* OneIPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneIPApp.swift; sourceTree = "<group>"; };
+		A338E0101CB5FED26FD6C331 /* PingProbe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingProbe.swift; sourceTree = "<group>"; };
+		AAB43F3A99294AD56740177B /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
+		BDB4362040DB99E54AA09C30 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		CAB3C8CD0A7C45964B05EBC7 /* AIMatrixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIMatrixViewModel.swift; sourceTree = "<group>"; };
+		CE43D8D643CD5B8E48E0AF16 /* AIMatrixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIMatrixView.swift; sourceTree = "<group>"; };
+		E86CA7A1202DA8D039990F43 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		E9A412AA7E612D150F74F77F /* MultiSourceGeoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSourceGeoView.swift; sourceTree = "<group>"; };
+		EB13DF543FD3899BDA9B7CD9 /* CDNInspectSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDNInspectSection.swift; sourceTree = "<group>"; };
+		F1E553AD5273DD3692FE93A1 /* AIPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPlatform.swift; sourceTree = "<group>"; };
+		FCD205FCFE5BF6A1298C2DE9 /* OneIP.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OneIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDBE301CDDAC5957E28C3F1B /* GlobalPingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPingSection.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		28BACB7E33CD4B2A7EF0D3CD /* Diagnostics */ = {
+			isa = PBXGroup;
+			children = (
+				EB13DF543FD3899BDA9B7CD9 /* CDNInspectSection.swift */,
+				134ED22C53720434098D6771 /* DiagnosticsView.swift */,
+				575A95EFE823E7BA5DDFFCE8 /* DiagnosticsViewModel.swift */,
+				5E8033107ADE4A29F6A5B65F /* DNSLeakSection.swift */,
+				FDBE301CDDAC5957E28C3F1B /* GlobalPingSection.swift */,
+				07AC42396A42837E63A34F33 /* RDAPSection.swift */,
+			);
+			path = Diagnostics;
+			sourceTree = "<group>";
+		};
+		3B44DE7C3FE1F673F6618B12 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				579C8B1D863370A06B98BAD7 /* AppSettings.swift */,
+				3103DE11FC3B065CC1F38050 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		400B3888089A44D169BABAB9 /* Lookup */ = {
+			isa = PBXGroup;
+			children = (
+				4FC5366AC2993206311BF251 /* IPLookupView.swift */,
+				9B066050166A07A4F0C6133D /* IPLookupViewModel.swift */,
+				E9A412AA7E612D150F74F77F /* MultiSourceGeoView.swift */,
+			);
+			path = Lookup;
+			sourceTree = "<group>";
+		};
+		48B900390D608FDA9BC5C184 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1E553AD5273DD3692FE93A1 /* AIPlatform.swift */,
+				9B83D4648B491571D08D395E /* CDNProvider.swift */,
+				409DBD0D66E7D33041748BC6 /* IPModels.swift */,
+				A338E0101CB5FED26FD6C331 /* PingProbe.swift */,
+				882C56C932AB0275282ECAD3 /* RDAPModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4937E05F0EB7726516AE527C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				18C4DE11C11F51F6C22DBB51 /* ExitSplitView.swift */,
+				70B7D9312998CA9BA90C057D /* HealthGaugeView.swift */,
+				16A55B5E70B7E64D5CB5C1CA /* IPCardView.swift */,
+				902954E5A3786D6B5317E59F /* MapCardView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5C73B6B814762188546C056F /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				AAB43F3A99294AD56740177B /* OverviewView.swift */,
+				9CD0178CB1547D60F2C0BCFE /* OverviewViewModel.swift */,
+				4937E05F0EB7726516AE527C /* Components */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
+		A063DC4E47F09491C783CDB4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9FFB47D960338F149B33EA42 /* OneIPApp.swift */,
+				8B4A657C4714641EC21A5F51 /* TabContainerView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A53FCE9421F2CE8E6FA75CD4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				654A8D299137DC98CFF111D1 /* DesignSystem.swift */,
+				BDB4362040DB99E54AA09C30 /* HapticManager.swift */,
+				E86CA7A1202DA8D039990F43 /* Localization.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B2E750A740D3A384D8A1FDE6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				89607E26DBF6BA2DC6EF6F60 /* AIService.swift */,
+				66CF6CEB515CD9ED6CAA7316 /* DiagnosticsService.swift */,
+				0A8D1B805033EC12B8FDDFDB /* GlobalPingService.swift */,
+				67150A6607D4F17BC0996CE8 /* IPService.swift */,
+				4315C5DE48587FA676C30FDB /* NetworkService.swift */,
+				42A726894A3A2C27E3263895 /* RDAPService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B78556649A24F643220D8782 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				DAB5A1786B06BEC742381295 /* AIMatrix */,
+				28BACB7E33CD4B2A7EF0D3CD /* Diagnostics */,
+				400B3888089A44D169BABAB9 /* Lookup */,
+				5C73B6B814762188546C056F /* Overview */,
+				3B44DE7C3FE1F673F6618B12 /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		C35383B30759CC813CCC03C8 = {
+			isa = PBXGroup;
+			children = (
+				E16B4E03170DCB91B86439A3 /* Sources */,
+				E9E346DA250B2727C76ADE79 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C99658D92158D50E80DAC172 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				48B900390D608FDA9BC5C184 /* Models */,
+				B2E750A740D3A384D8A1FDE6 /* Services */,
+				A53FCE9421F2CE8E6FA75CD4 /* Utilities */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DAB5A1786B06BEC742381295 /* AIMatrix */ = {
+			isa = PBXGroup;
+			children = (
+				5BC5685113E8755FD5D80EE7 /* AICardView.swift */,
+				CE43D8D643CD5B8E48E0AF16 /* AIMatrixView.swift */,
+				CAB3C8CD0A7C45964B05EBC7 /* AIMatrixViewModel.swift */,
+			);
+			path = AIMatrix;
+			sourceTree = "<group>";
+		};
+		E16B4E03170DCB91B86439A3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A063DC4E47F09491C783CDB4 /* App */,
+				C99658D92158D50E80DAC172 /* Core */,
+				B78556649A24F643220D8782 /* Features */,
+				FABE0667E811FC380A47F762 /* Resources */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		E9E346DA250B2727C76ADE79 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCD205FCFE5BF6A1298C2DE9 /* OneIP.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FABE0667E811FC380A47F762 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				53077EC9413936BB8659A713 /* Assets.xcassets */,
+				7F1EF9B0A4A710009E7ABA00 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D844D1A255234904C8080C1A /* OneIP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BCDCA4EBB1A126484F302CD /* Build configuration list for PBXNativeTarget "OneIP" */;
+			buildPhases = (
+				2F87D1F36DC5C28F6894D379 /* Sources */,
+				99A0296BC27A2A98050CD465 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneIP;
+			packageProductDependencies = (
+			);
+			productName = OneIP;
+			productReference = FCD205FCFE5BF6A1298C2DE9 /* OneIP.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F07FB89303A18BD1F2803750 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = C664DC2E907887F5F668346F /* Build configuration list for PBXProject "OneIP" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C35383B30759CC813CCC03C8;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E9E346DA250B2727C76ADE79 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D844D1A255234904C8080C1A /* OneIP */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		99A0296BC27A2A98050CD465 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A278A03E2EAA6C00B55CF76 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F87D1F36DC5C28F6894D379 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCFA99C2BAFC2BCF4F62EF88 /* AICardView.swift in Sources */,
+				88438295C93F2BF867F98B7A /* AIMatrixView.swift in Sources */,
+				4D449EADACF55B76A13EEA22 /* AIMatrixViewModel.swift in Sources */,
+				100C9A8EB7C11D80C52101C2 /* AIPlatform.swift in Sources */,
+				DA7F16FB9F2A0CE270135EF1 /* AIService.swift in Sources */,
+				50E69364A53E422972E2986F /* AppSettings.swift in Sources */,
+				3D42BA48C19C9BFEE3E184FB /* CDNInspectSection.swift in Sources */,
+				D5546E59082B7CF1DBCA3A7C /* CDNProvider.swift in Sources */,
+				DDF323F08F86CF9FE11449FE /* DNSLeakSection.swift in Sources */,
+				B5F2F651D568ABA641F896AD /* DesignSystem.swift in Sources */,
+				025DD0E4612D3D580F4D2CFF /* DiagnosticsService.swift in Sources */,
+				378E016CC156EE7C89D8064A /* DiagnosticsView.swift in Sources */,
+				45E5781B62493F32084881C9 /* DiagnosticsViewModel.swift in Sources */,
+				7157E38F0D0653BFF07158D3 /* ExitSplitView.swift in Sources */,
+				B453211F8A3867F9642813BE /* GlobalPingSection.swift in Sources */,
+				90D7BDC2B6A9721D6D1C174E /* GlobalPingService.swift in Sources */,
+				B489694DB05FC0003610FE91 /* HapticManager.swift in Sources */,
+				7B53EC1A799286A7DE7DC217 /* HealthGaugeView.swift in Sources */,
+				E66A3986272DCA1C22687625 /* IPCardView.swift in Sources */,
+				41ADE2D4C42402E4EFD30FA8 /* IPLookupView.swift in Sources */,
+				85AC89C8E3012E18C6A22510 /* IPLookupViewModel.swift in Sources */,
+				51C2278F0773ACCB56388963 /* IPModels.swift in Sources */,
+				F5283311BE5884D5D1642AE4 /* IPService.swift in Sources */,
+				110966891C95944D4E8665E5 /* Localization.swift in Sources */,
+				BC056ECFD7DD5DBA02E1CEF5 /* MapCardView.swift in Sources */,
+				9A031DCEE696CE3CC3052CC4 /* MultiSourceGeoView.swift in Sources */,
+				FE592C2253D8007E5DE8954F /* NetworkService.swift in Sources */,
+				D8E8E4D96D2F046D79FD873C /* OneIPApp.swift in Sources */,
+				8B8BE96694D92A1E9BF1E669 /* OverviewView.swift in Sources */,
+				61D5771A7A05E43BFB040023 /* OverviewViewModel.swift in Sources */,
+				149C2929B8DEF2285727D24C /* PingProbe.swift in Sources */,
+				C55E565916613DBE172AE83A /* RDAPModels.swift in Sources */,
+				1867A4517C924393F3F24F4A /* RDAPSection.swift in Sources */,
+				5FE5D7477E1ED63BF2E477F2 /* RDAPService.swift in Sources */,
+				DC81394C9930E50E44414BB5 /* SettingsView.swift in Sources */,
+				92CED721DC1C42C5C9984DCD /* TabContainerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0A5970CB4C7098C4F06BBC2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1D6AB4DA62154D98A44438CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Sources/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oneip.app;
+				PRODUCT_NAME = OneIP;
+				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DADA83044003792C6A40D660 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Sources/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oneip.app;
+				PRODUCT_NAME = OneIP;
+				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E9E15988181CFF8058270F69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9BCDCA4EBB1A126484F302CD /* Build configuration list for PBXNativeTarget "OneIP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6AB4DA62154D98A44438CB /* Debug */,
+				DADA83044003792C6A40D660 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C664DC2E907887F5F668346F /* Build configuration list for PBXProject "OneIP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A5970CB4C7098C4F06BBC2B /* Debug */,
+				E9E15988181CFF8058270F69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F07FB89303A18BD1F2803750 /* Project object */;
+}

@@ -1,0 +1,18 @@
+# Xcode
+.DS_Store
+*/.DS_Store
+build/
+DerivedData/
+*.xcuserstate
+project.xcworkspace
+xcuserdata/
+*.xcuserdatad
+
+# CocoaPods / SPM
+.build/
+Packages/
+
+# Backup files
+*.bak
+*~
+*.swp
