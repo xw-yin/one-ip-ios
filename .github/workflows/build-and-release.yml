@@ -1,0 +1,162 @@
+name: Build & Release One IP iOS
+
+on:
+  push:
+    tags:
+      - 'v*'
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      version:
+        description: '版本号 (Version number, e.g. 1.0.0)'
+        required: true
+        default: '1.0.0'
+      create_release:
+        description: '是否发布到 GitHub Releases'
+        type: boolean
+        required: true
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build & Package IPA
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Select Xcode Version
+        run: |
+          sudo xcode-select -s /Applications/Xcode_15.4.app || sudo xcode-select -s /Applications/Xcode.app
+          xcodebuild -version
+
+      - name: Install XcodeGen
+        run: |
+          brew install xcodegen
+
+      - name: Determine Version & Build Number
+        id: versioning
+        run: |
+          # 1. 提取版本号 (Version)
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            RAW_VER="${{ github.event.inputs.version }}"
+          elif [[ "${{ github.ref }}" == refs/tags/v* ]]; then
+            RAW_VER="${GITHUB_REF_NAME#v}"
+          else
+            RAW_VER="1.0.0"
+          fi
+          
+          # 2. 提取构建号 (Build Number)
+          BUILD_NUM="${{ github.run_number }}"
+          
+          # 3. 规范化 "版本号 + Build" 规则
+          FULL_VER="${RAW_VER}+${BUILD_NUM}"
+          TAG_NAME="v${RAW_VER}+b${BUILD_NUM}"
+          RELEASE_TITLE="One IP v${RAW_VER} (Build ${BUILD_NUM})"
+          IPA_NAME="OneIP-v${FULL_VER}.ipa"
+          
+          echo "version=${RAW_VER}" >> $GITHUB_OUTPUT
+          echo "build_number=${BUILD_NUM}" >> $GITHUB_OUTPUT
+          echo "full_version=${FULL_VER}" >> $GITHUB_OUTPUT
+          echo "tag_name=${TAG_NAME}" >> $GITHUB_OUTPUT
+          echo "release_title=${RELEASE_TITLE}" >> $GITHUB_OUTPUT
+          echo "ipa_name=${IPA_NAME}" >> $GITHUB_OUTPUT
+          
+          echo "=========================================="
+          echo "版本号 (Version): ${RAW_VER}"
+          echo "构建号 (Build):   ${BUILD_NUM}"
+          echo "完整版本 (Full):  ${FULL_VER}"
+          echo "发布标签 (Tag):   ${TAG_NAME}"
+          echo "安装包名 (IPA):   ${IPA_NAME}"
+          echo "=========================================="
+
+      - name: Apply Versioning to Info.plist
+        run: |
+          PLIST="Sources/Resources/Info.plist"
+          plutil -replace CFBundleShortVersionString -string "${{ steps.versioning.outputs.version }}" "$PLIST"
+          plutil -replace CFBundleVersion -string "${{ steps.versioning.outputs.build_number }}" "$PLIST"
+          echo "Updated $PLIST with version ${{ steps.versioning.outputs.version }} and build ${{ steps.versioning.outputs.build_number }}"
+
+      - name: Generate Xcode Project
+        run: |
+          xcodegen generate
+
+      - name: Build Archive (iOS Release)
+        run: |
+          xcodebuild archive \
+            -project OneIP.xcodeproj \
+            -scheme OneIP \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath build/OneIP.xcarchive \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY=""
+
+      - name: Package Payload to IPA
+        id: package
+        run: |
+          mkdir -p build/Payload
+          cp -R build/OneIP.xcarchive/Products/Applications/OneIP.app build/Payload/
+          cd build
+          zip -qr "${{ steps.versioning.outputs.ipa_name }}" Payload
+          cd ..
+          
+          # 压缩调试符号表 dSYM
+          cd build/OneIP.xcarchive/dSYMs
+          zip -qr ../../OneIP-dSYMs.zip .
+          cd ../../..
+          
+          echo "ipa_path=build/${{ steps.versioning.outputs.ipa_name }}" >> $GITHUB_OUTPUT
+          echo "dsym_path=build/OneIP-dSYMs.zip" >> $GITHUB_OUTPUT
+          ls -lh "build/${{ steps.versioning.outputs.ipa_name }}"
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.versioning.outputs.ipa_name }}
+          path: |
+            ${{ steps.package.outputs.ipa_path }}
+            ${{ steps.package.outputs.dsym_path }}
+
+      - name: Create GitHub Release
+        if: |
+          startsWith(github.ref, 'refs/tags/v') ||
+          (github.event_name == 'workflow_dispatch' && github.event.inputs.create_release == 'true')
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.versioning.outputs.tag_name }}
+          name: ${{ steps.versioning.outputs.release_title }}
+          body: |
+            ## 🚀 One IP iOS 原生版发布 (${{ steps.versioning.outputs.release_title }})
+            
+            基于开源项目 [zhihui-hu/one-ip](https://github.com/zhihui-hu/one-ip.git)，遵循 **iOS 27 Spatial Liquid Glass 设计规范** 构建。
+            
+            ### 📌 版本信息
+            - **版本号 (Version)**: `${{ steps.versioning.outputs.version }}`
+            - **构建号 (Build)**: `${{ steps.versioning.outputs.build_number }}`
+            - **版本标识 (Full)**: `${{ steps.versioning.outputs.full_version }}`
+            - **提交哈希 (Commit)**: `${{ github.sha }}`
+            
+            ---
+            
+            ### 📲 安装与侧载方式
+            下载下方 Assets 中的 `.ipa` 安装包，可通过以下方式签名安装：
+            1. **TrollStore**（免签巨魔商店，推荐）
+            2. **SideStore / AltStore**（个人证书签名）
+            3. **LiveContainer**（免越狱应用容器）
+            4. 自签名工具或企业签名平台
+          files: |
+            ${{ steps.package.outputs.ipa_path }}
+            ${{ steps.package.outputs.dsym_path }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
