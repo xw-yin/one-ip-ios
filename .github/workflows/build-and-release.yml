@@ -34,7 +34,21 @@ jobs:
 
       - name: Select Xcode Version
         run: |
-          sudo xcode-select -s /Applications/Xcode_15.4.app || sudo xcode-select -s /Applications/Xcode.app
+          echo "Available Xcode installations:"
+          ls -d /Applications/Xcode* || true
+          
+          if [ -d "/Applications/Xcode_16.2.app" ]; then
+            sudo xcode-select -s /Applications/Xcode_16.2.app
+          elif [ -d "/Applications/Xcode_16.1.app" ]; then
+            sudo xcode-select -s /Applications/Xcode_16.1.app
+          elif [ -d "/Applications/Xcode_16.0.app" ]; then
+            sudo xcode-select -s /Applications/Xcode_16.0.app
+          elif [ -d "/Applications/Xcode_15.4.app" ]; then
+            sudo xcode-select -s /Applications/Xcode_15.4.app
+          else
+            sudo xcode-select -s /Applications/Xcode.app
+          fi
+          
           xcodebuild -version
 
       - name: Install XcodeGen
@@ -84,9 +98,13 @@ jobs:
           plutil -replace CFBundleVersion -string "${{ steps.versioning.outputs.build_number }}" "$PLIST"
           echo "Updated $PLIST with version ${{ steps.versioning.outputs.version }} and build ${{ steps.versioning.outputs.build_number }}"
 
-      - name: Generate Xcode Project
+      - name: Generate Compatible Xcode Project
         run: |
+          rm -rf OneIP.xcodeproj
           xcodegen generate
+          # 强制指定为兼容 Xcode 15/16/27 的 objectVersion 56
+          sed -i '' 's/objectVersion = [0-9]*/objectVersion = 56/' OneIP.xcodeproj/project.pbxproj
+          echo "Project generated with compatible objectVersion 56."
 
       - name: Build Archive (iOS Release)
         run: |
@@ -109,10 +127,14 @@ jobs:
           zip -qr "${{ steps.versioning.outputs.ipa_name }}" Payload
           cd ..
           
-          # 压缩调试符号表 dSYM
-          cd build/OneIP.xcarchive/dSYMs
-          zip -qr ../../OneIP-dSYMs.zip .
-          cd ../../..
+          # 压缩调试符号表 dSYM (若存在)
+          if [ -d "build/OneIP.xcarchive/dSYMs" ]; then
+            cd build/OneIP.xcarchive/dSYMs
+            zip -qr ../../OneIP-dSYMs.zip . || true
+            cd ../../..
+          else
+            touch build/OneIP-dSYMs.zip
+          fi
           
           echo "ipa_path=build/${{ steps.versioning.outputs.ipa_name }}" >> $GITHUB_OUTPUT
           echo "dsym_path=build/OneIP-dSYMs.zip" >> $GITHUB_OUTPUT
