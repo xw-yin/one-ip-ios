@@ -22,21 +22,6 @@ public struct HealthGaugeView: View {
         Color.scoreColor(for: score)
     }
     
-    private var progressGradient: LinearGradient {
-        guard let s = score else { return LinearGradient.brandFlow }
-        if s >= 75 {
-            return LinearGradient(
-                colors: [Color(red: 0.10, green: 0.82, blue: 0.55), Color(red: 0.13, green: 0.77, blue: 0.45)],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-        } else if s >= 45 {
-            return LinearGradient.moderateFlow
-        } else {
-            return LinearGradient.poorFlow
-        }
-    }
-    
     public var body: some View {
         VStack(spacing: 14) {
             // Seamless Circular Score Ring (Unified, No Layered Stacking)
@@ -49,11 +34,11 @@ public struct HealthGaugeView: View {
                     )
                     .frame(width: 126, height: 126)
                 
-                // Progress Arc: Single flush stroke starting from 12 o'clock
+                // Progress Arc: Single flush solid color stroke starting from 12 o'clock
                 Circle()
                     .trim(from: 0.0, to: animatedProgress)
                     .stroke(
-                        progressGradient,
+                        gaugeColor,
                         style: StrokeStyle(lineWidth: 10, lineCap: .round)
                     )
                     .rotationEffect(.degrees(-90))
