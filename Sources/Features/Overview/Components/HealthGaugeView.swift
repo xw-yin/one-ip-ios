@@ -22,48 +22,56 @@ public struct HealthGaugeView: View {
         Color.scoreColor(for: score)
     }
     
-    private var gaugeGradient: AngularGradient {
-        let col = gaugeColor
-        return AngularGradient(
-            gradient: Gradient(colors: [col.opacity(0.3), col, col.opacity(0.9)]),
-            center: .center,
-            startAngle: .degrees(135),
-            endAngle: .degrees(405)
-        )
+    private var progressGradient: LinearGradient {
+        guard let s = score else { return LinearGradient.brandFlow }
+        if s >= 75 {
+            return LinearGradient(
+                colors: [Color(red: 0.10, green: 0.82, blue: 0.55), Color(red: 0.13, green: 0.77, blue: 0.45)],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        } else if s >= 45 {
+            return LinearGradient.moderateFlow
+        } else {
+            return LinearGradient.poorFlow
+        }
     }
     
     public var body: some View {
-        VStack(spacing: 16) {
-            // Circular Score Ring
+        VStack(spacing: 14) {
+            // Seamless Circular Score Ring (Unified, No Layered Stacking)
             ZStack {
-                // Background Track
+                // Background Track: Continuous closed ring, perfectly flush
                 Circle()
-                    .trim(from: 0.0, to: 0.75)
                     .stroke(
-                        Color.white.opacity(0.12),
-                        style: StrokeStyle(lineWidth: 14, lineCap: .round)
+                        Color(uiColor: .tertiarySystemFill),
+                        style: StrokeStyle(lineWidth: 10, lineCap: .round)
                     )
-                    .rotationEffect(.degrees(135))
-                    .frame(width: 140, height: 140)
+                    .frame(width: 126, height: 126)
                 
-                // Animated Progress Stroke
+                // Progress Arc: Single flush stroke starting from 12 o'clock
                 Circle()
-                    .trim(from: 0.0, to: animatedProgress * 0.75)
+                    .trim(from: 0.0, to: animatedProgress)
                     .stroke(
-                        gaugeGradient,
-                        style: StrokeStyle(lineWidth: 14, lineCap: .round)
+                        progressGradient,
+                        style: StrokeStyle(lineWidth: 10, lineCap: .round)
                     )
-                    .rotationEffect(.degrees(135))
-                    .frame(width: 140, height: 140)
-                    .shadow(color: gaugeColor.opacity(0.4), radius: 10, x: 0, y: 0)
+                    .rotationEffect(.degrees(-90))
+                    .frame(width: 126, height: 126)
                 
-                // Center Text
+                // Center Score and Status Display
                 VStack(spacing: 2) {
                     if let s = score {
-                        Text("\(s)")
-                            .font(.system(size: 42, weight: .bold, design: .rounded))
-                            .foregroundColor(.primary)
-                            .contentTransition(.numericText())
+                        HStack(alignment: .lastTextBaseline, spacing: 2) {
+                            Text("\(s)")
+                                .font(.system(size: 38, weight: .bold, design: .rounded))
+                                .foregroundColor(.primary)
+                                .contentTransition(.numericText())
+                            
+                            Text("/100")
+                                .font(.system(size: 13, weight: .medium, design: .rounded))
+                                .foregroundColor(.secondary)
+                        }
                     } else {
                         ProgressView()
                             .scaleEffect(1.2)
@@ -74,7 +82,7 @@ public struct HealthGaugeView: View {
                         .foregroundColor(gaugeColor)
                 }
             }
-            .padding(.top, 10)
+            .padding(.vertical, 4)
             
             // Risk Tag Chips
             RiskFlagsView(flags: flags)
