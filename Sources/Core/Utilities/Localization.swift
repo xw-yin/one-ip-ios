@@ -50,7 +50,7 @@ private enum LocalizedStrings {
         "tab_diagnostics": "网络诊断",
         "tab_settings": "设置",
         
-        "overview_title": "One IP",
+        "overview_title": "IP 概览",
         "overview_subtitle": "瞬息洞察 IP 纯净底色与风险评级",
         "domestic_ip": "国内出口 IP",
         "global_ip": "公网出口 IP",
@@ -117,7 +117,7 @@ private enum LocalizedStrings {
         "tab_diagnostics": "Diagnostics",
         "tab_settings": "Settings",
         
-        "overview_title": "One IP",
+        "overview_title": "IP Overview",
         "overview_subtitle": "Instant IP Cleanliness & Risk Diagnostics",
         "domestic_ip": "Domestic IP",
         "global_ip": "Global Public IP",

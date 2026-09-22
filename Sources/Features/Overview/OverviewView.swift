@@ -12,30 +12,6 @@ public struct OverviewView: View {
         NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 20) {
-                    // Header Subtitle & Last Updated
-                    HStack {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(t("overview_subtitle"))
-                                .font(.system(size: 13, weight: .medium))
-                                .foregroundColor(.secondary)
-                        }
-                        Spacer()
-                        
-                        // Status indicator pill
-                        HStack(spacing: 6) {
-                            Circle()
-                                .fill(viewModel.isRefreshing ? Color.brandCyan : Color.statusGood)
-                                .frame(width: 8, height: 8)
-                            
-                            Text(viewModel.isRefreshing ? t("refreshing") : "在线实时")
-                                .font(.system(size: 11, weight: .medium))
-                                .foregroundColor(.secondary)
-                        }
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 5)
-                        .background(.ultraThinMaterial, in: Capsule())
-                    }
-                    .padding(.horizontal, 4)
                     
                     // 1. Health Score Gauge Card
                     VStack(alignment: .center, spacing: 8) {
