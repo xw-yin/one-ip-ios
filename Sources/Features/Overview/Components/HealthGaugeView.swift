@@ -23,40 +23,36 @@ public struct HealthGaugeView: View {
     }
     
     public var body: some View {
-        VStack(spacing: 14) {
-            // Seamless Circular Score Ring (Unified, No Layered Stacking)
+        VStack(spacing: 16) {
+            // Circular Score Ring
             ZStack {
-                // Background Track: Continuous closed ring, perfectly flush
+                // Background Track (Clean solid muted track)
                 Circle()
+                    .trim(from: 0.0, to: 0.75)
                     .stroke(
                         Color(uiColor: .tertiarySystemFill),
-                        style: StrokeStyle(lineWidth: 10, lineCap: .round)
+                        style: StrokeStyle(lineWidth: 12, lineCap: .round)
                     )
-                    .frame(width: 126, height: 126)
+                    .rotationEffect(.degrees(135))
+                    .frame(width: 140, height: 140)
                 
-                // Progress Arc: Single flush solid color stroke starting from 12 o'clock
+                // Animated Progress Stroke (Single solid non-gradient color)
                 Circle()
-                    .trim(from: 0.0, to: animatedProgress)
+                    .trim(from: 0.0, to: animatedProgress * 0.75)
                     .stroke(
                         gaugeColor,
-                        style: StrokeStyle(lineWidth: 10, lineCap: .round)
+                        style: StrokeStyle(lineWidth: 12, lineCap: .round)
                     )
-                    .rotationEffect(.degrees(-90))
-                    .frame(width: 126, height: 126)
+                    .rotationEffect(.degrees(135))
+                    .frame(width: 140, height: 140)
                 
-                // Center Score and Status Display
+                // Center Text
                 VStack(spacing: 2) {
                     if let s = score {
-                        HStack(alignment: .lastTextBaseline, spacing: 2) {
-                            Text("\(s)")
-                                .font(.system(size: 38, weight: .bold, design: .rounded))
-                                .foregroundColor(.primary)
-                                .contentTransition(.numericText())
-                            
-                            Text("/100")
-                                .font(.system(size: 13, weight: .medium, design: .rounded))
-                                .foregroundColor(.secondary)
-                        }
+                        Text("\(s)")
+                            .font(.system(size: 42, weight: .bold, design: .rounded))
+                            .foregroundColor(.primary)
+                            .contentTransition(.numericText())
                     } else {
                         ProgressView()
                             .scaleEffect(1.2)
@@ -67,7 +63,7 @@ public struct HealthGaugeView: View {
                         .foregroundColor(gaugeColor)
                 }
             }
-            .padding(.vertical, 4)
+            .padding(.top, 10)
             
             // Risk Tag Chips
             RiskFlagsView(flags: flags)
