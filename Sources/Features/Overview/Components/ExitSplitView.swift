@@ -35,11 +35,13 @@ public struct ExitSplitView: View {
             VStack(spacing: 8) {
                 ForEach(items) { item in
                     HStack(spacing: 12) {
-                        Image(systemName: item.iconName)
-                            .font(.system(size: 14, weight: .semibold))
-                            .foregroundColor(.primary)
-                            .frame(width: 28, height: 28)
-                            .background(.ultraThinMaterial, in: Circle())
+                        SiteIconView(
+                            domain: item.domain,
+                            fallbackSystemName: item.iconName,
+                            size: 18
+                        )
+                        .frame(width: 28, height: 28)
+                        .background(.ultraThinMaterial, in: Circle())
                         
                         VStack(alignment: .leading, spacing: 2) {
                             Text(item.name)

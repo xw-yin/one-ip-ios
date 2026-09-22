@@ -13,11 +13,13 @@ public struct SettingsView: View {
                 Section {
                     ForEach(appSettings.cloudServices) { item in
                         HStack(spacing: 12) {
-                            Image(systemName: item.iconName)
-                                .font(.system(size: 15))
-                                .foregroundColor(.primary)
-                                .frame(width: 28, height: 28)
-                                .background(.ultraThinMaterial, in: Circle())
+                            SiteIconView(
+                                domain: item.domain,
+                                fallbackSystemName: item.iconName,
+                                size: 18
+                            )
+                            .frame(width: 28, height: 28)
+                            .background(.ultraThinMaterial, in: Circle())
                             
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(item.name)

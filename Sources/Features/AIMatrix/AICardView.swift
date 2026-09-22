@@ -24,11 +24,14 @@ public struct AICardView: View {
         VStack(alignment: .leading, spacing: 12) {
             // Top Row: Icon + Name + Status Pill
             HStack(spacing: 10) {
-                Image(systemName: item.iconSystemName)
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(statusColor)
-                    .frame(width: 32, height: 32)
-                    .background(statusColor.opacity(0.12), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                SiteIconView(
+                    domain: item.domain,
+                    fallbackSystemName: item.iconSystemName,
+                    size: 20,
+                    tintColor: statusColor
+                )
+                .frame(width: 32, height: 32)
+                .background(statusColor.opacity(0.12), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                 
                 VStack(alignment: .leading, spacing: 2) {
                     Text(item.name)

@@ -35,6 +35,7 @@
 		B5F2F651D568ABA641F896AD /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A8D299137DC98CFF111D1 /* DesignSystem.swift */; };
 		BC056ECFD7DD5DBA02E1CEF5 /* MapCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902954E5A3786D6B5317E59F /* MapCardView.swift */; };
 		C55E565916613DBE172AE83A /* RDAPModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C56C932AB0275282ECAD3 /* RDAPModels.swift */; };
+		D302570FACBE889EE900CA3E /* SiteIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14DD20C535D3A4F56DE64E7 /* SiteIconView.swift */; };
 		D5546E59082B7CF1DBCA3A7C /* CDNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83D4648B491571D08D395E /* CDNProvider.swift */; };
 		D8E8E4D96D2F046D79FD873C /* OneIPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFB47D960338F149B33EA42 /* OneIPApp.swift */; };
 		DA7F16FB9F2A0CE270135EF1 /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89607E26DBF6BA2DC6EF6F60 /* AIService.swift */; };
@@ -80,6 +81,7 @@
 		BDB4362040DB99E54AA09C30 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		CAB3C8CD0A7C45964B05EBC7 /* AIMatrixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIMatrixViewModel.swift; sourceTree = "<group>"; };
 		CE43D8D643CD5B8E48E0AF16 /* AIMatrixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIMatrixView.swift; sourceTree = "<group>"; };
+		E14DD20C535D3A4F56DE64E7 /* SiteIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteIconView.swift; sourceTree = "<group>"; };
 		E86CA7A1202DA8D039990F43 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		E9A412AA7E612D150F74F77F /* MultiSourceGeoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSourceGeoView.swift; sourceTree = "<group>"; };
 		EB13DF543FD3899BDA9B7CD9 /* CDNInspectSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDNInspectSection.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				654A8D299137DC98CFF111D1 /* DesignSystem.swift */,
 				BDB4362040DB99E54AA09C30 /* HapticManager.swift */,
 				E86CA7A1202DA8D039990F43 /* Localization.swift */,
+				E14DD20C535D3A4F56DE64E7 /* SiteIconView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				1867A4517C924393F3F24F4A /* RDAPSection.swift in Sources */,
 				5FE5D7477E1ED63BF2E477F2 /* RDAPService.swift in Sources */,
 				DC81394C9930E50E44414BB5 /* SettingsView.swift in Sources */,
+				D302570FACBE889EE900CA3E /* SiteIconView.swift in Sources */,
 				92CED721DC1C42C5C9984DCD /* TabContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

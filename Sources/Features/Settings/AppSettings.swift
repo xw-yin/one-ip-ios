@@ -20,6 +20,7 @@ public struct CloudStatusItem: Identifiable, Sendable {
     public let id: String
     public let name: String
     public let provider: String
+    public let domain: String
     public let iconName: String
     public var isOperational: Bool
     public var latencyMs: Int?
@@ -36,12 +37,12 @@ public final class AppSettings: ObservableObject {
     @AppStorage("appearance_mode") public var appearanceMode: AppearanceMode = .system
     
     @Published public var cloudServices: [CloudStatusItem] = [
-        CloudStatusItem(id: "cf", name: "Cloudflare", provider: "Cloudflare Edge", iconName: "cloud.fill", isOperational: true, latencyMs: 24, statusDescription: "All Systems Operational"),
-        CloudStatusItem(id: "github", name: "GitHub", provider: "Microsoft / GitHub", iconName: "chevron.left.forwardslash.chevron.right", isOperational: true, latencyMs: 38, statusDescription: "Normal"),
-        CloudStatusItem(id: "openai", name: "OpenAI API", provider: "OpenAI", iconName: "sparkles", isOperational: true, latencyMs: 52, statusDescription: "Operational"),
-        CloudStatusItem(id: "apple", name: "Apple Services", provider: "Apple Inc.", iconName: "applelogo", isOperational: true, latencyMs: 18, statusDescription: "Available"),
-        CloudStatusItem(id: "aws", name: "AWS Cloud", provider: "Amazon Web Services", iconName: "server.rack", isOperational: true, latencyMs: 45, statusDescription: "Normal"),
-        CloudStatusItem(id: "gcp", name: "Google Cloud", provider: "Google LLC", iconName: "globe", isOperational: true, latencyMs: 32, statusDescription: "All Services Normal")
+        CloudStatusItem(id: "cf", name: "Cloudflare", provider: "Cloudflare Edge", domain: "cloudflare.com", iconName: "cloud.fill", isOperational: true, latencyMs: 24, statusDescription: "All Systems Operational"),
+        CloudStatusItem(id: "github", name: "GitHub", provider: "Microsoft / GitHub", domain: "github.com", iconName: "chevron.left.forwardslash.chevron.right", isOperational: true, latencyMs: 38, statusDescription: "Normal"),
+        CloudStatusItem(id: "openai", name: "OpenAI API", provider: "OpenAI", domain: "chatgpt.com", iconName: "sparkles", isOperational: true, latencyMs: 52, statusDescription: "Operational"),
+        CloudStatusItem(id: "apple", name: "Apple Services", provider: "Apple Inc.", domain: "apple.com", iconName: "applelogo", isOperational: true, latencyMs: 18, statusDescription: "Available"),
+        CloudStatusItem(id: "aws", name: "AWS Cloud", provider: "Amazon Web Services", domain: "aws.amazon.com", iconName: "server.rack", isOperational: true, latencyMs: 45, statusDescription: "Normal"),
+        CloudStatusItem(id: "gcp", name: "Google Cloud", provider: "Google LLC", domain: "google.com", iconName: "globe", isOperational: true, latencyMs: 32, statusDescription: "All Services Normal")
     ]
     
     public func refreshCloudStatus() async {
