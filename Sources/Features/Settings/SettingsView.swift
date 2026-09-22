@@ -16,10 +16,9 @@ public struct SettingsView: View {
                             SiteIconView(
                                 domain: item.domain,
                                 fallbackSystemName: item.iconName,
-                                size: 18
+                                size: 22
                             )
-                            .frame(width: 28, height: 28)
-                            .background(.ultraThinMaterial, in: Circle())
+                            .frame(width: 24, height: 24)
                             
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(item.name)

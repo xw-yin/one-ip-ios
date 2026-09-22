@@ -27,11 +27,10 @@ public struct AICardView: View {
                 SiteIconView(
                     domain: item.domain,
                     fallbackSystemName: item.iconSystemName,
-                    size: 20,
+                    size: 26,
                     tintColor: statusColor
                 )
-                .frame(width: 32, height: 32)
-                .background(statusColor.opacity(0.12), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .frame(width: 28, height: 28)
                 
                 VStack(alignment: .leading, spacing: 2) {
                     Text(item.name)

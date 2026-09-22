@@ -68,13 +68,27 @@ public struct SiteIconView: View {
         return UIImage(named: name)
     }
     
+    private var isMonochromeBrand: Bool {
+        guard let name = bundledImageName else { return false }
+        return ["brand_github", "brand_apple", "brand_x", "brand_perplexity", "brand_grok", "brand_kimi"].contains(name)
+    }
+    
     public var body: some View {
         Group {
             if let local = localImage {
-                Image(uiImage: local)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: size, height: size)
+                if isMonochromeBrand {
+                    Image(uiImage: local)
+                        .renderingMode(.template)
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(tintColor ?? .primary)
+                        .frame(width: size, height: size)
+                } else {
+                    Image(uiImage: local)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: size, height: size)
+                }
             } else if let remote = remoteImage {
                 Image(uiImage: remote)
                     .resizable()
